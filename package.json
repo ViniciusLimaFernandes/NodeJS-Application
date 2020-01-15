@@ -1,0 +1,20 @@
+{
+  "name": "nodejs-application",
+  "version": "1.0.0",
+  "description": "A complete NodeJS application developed to improve the language knowledge",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViniciusLimaFernandes/NodeJS-Application.git"
+  },
+  "author": "Vinicius Lima Fernandes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ViniciusLimaFernandes/NodeJS-Application/issues"
+  },
+  "homepage": "https://github.com/ViniciusLimaFernandes/NodeJS-Application#readme"
+}
