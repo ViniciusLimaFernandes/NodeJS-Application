@@ -32,36 +32,28 @@ function obterEndereco(idUsuario) {
   });
 }
 
-const usuarioPromise = obterUsuario();
+main();
+async function main() {
+  try {
+    console.time("medida-promise");
+    const usuario = await obterUsuario();
 
-usuarioPromise
-  .then(usuario => {
-    return obterTelefone(usuario.id).then(telefone => {
-      return {
-        usuario: {
-          nome: usuario.nome,
-          id: usuario.id
-        },
-        telefone: telefone
-      };
-    });
-  })
-  .then(result => {
-    return obterEndereco(result.usuario.id).then(endereco => {
-      return {
-        usuario: result.usuario,
-        telefone: result.telefone,
-        endereco: endereco
-      };
-    });
-  })
-  .then(result => {
+    const resultado = await Promise.all([
+      obterTelefone(usuario.id),
+      obterEndereco(usuario.id)
+    ]);
+
+    const telefone = resultado[0];
+    const endereco = resultado[1];
+
     console.log(`
-        Nome: ${result.usuario.nome}
-        Telefone: ${result.telefone.telefone}
-        Endereco: ${result.endereco.rua}, ${result.endereco.numero}
-    `);
-  })
-  .catch(error => {
-    console.error("Error while processing the user...", error);
-  });
+        Nome: ${usuario.nome},
+        Telefone: ${telefone.telefone},
+        Endereco: ${endereco.rua}, ${endereco.numero}
+        `);
+
+    console.timeEnd("medida-promise");
+  } catch (error) {
+    console.log("Erro: ", error);
+  }
+}
