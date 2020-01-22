@@ -3,7 +3,7 @@ const database = require("./database");
 const Heroi = require("./heroi");
 const utils = require("./utils");
 
-async function main() {
+(async () => {
   commander
     .version("v1")
     .option("-n, --nome [value]", "Nome do heroi")
@@ -49,5 +49,4 @@ async function main() {
   } catch (error) {
     console.error("Erro:", error);
   }
-}
-main();
+})();
