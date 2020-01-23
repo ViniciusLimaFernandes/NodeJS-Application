@@ -22,7 +22,7 @@
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize(
   'herois', //database
-  'erickwendel', // user
+  'vinicius', // user
   'minhasenhasecreta', //senha
   {
     host: 'localhost',

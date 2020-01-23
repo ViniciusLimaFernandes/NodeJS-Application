@@ -1,6 +1,6 @@
 // npm i mongoose
 const Mongoose = require('mongoose')
-Mongoose.connect('mongodb://erickwendel:minhaoutrasenhasecreta@localhost:27017/herois', {
+Mongoose.connect('mongodb://vinicius:minhaoutrasenhasecreta@localhost:27017/herois', {
   useNewUrlParser: true
 }, (error) => {
   if (!error) return;

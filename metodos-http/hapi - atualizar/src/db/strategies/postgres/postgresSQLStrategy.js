@@ -20,7 +20,7 @@ class PostgreSQLStrategy extends IDb {
   static async connect() {
     const sequelize  = new Sequelize(
       'heroes', //database
-      'erickwendel', // user
+      'vinicius', // user
       'minhasenhasecreta', //senha
       {
         host: 'localhost',
