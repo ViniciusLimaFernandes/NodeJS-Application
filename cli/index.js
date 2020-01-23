@@ -45,6 +45,13 @@ const utils = require("./utils");
 
     if (commander.remover) {
       const resultado = await database.remover(heroi.id);
+
+      if (!resultado) {
+        console.error("Heroi nao pode ser removido");
+        return;
+      }
+
+      console.log("Heroi removido com sucesso!");
     }
   } catch (error) {
     console.error("Erro:", error);
